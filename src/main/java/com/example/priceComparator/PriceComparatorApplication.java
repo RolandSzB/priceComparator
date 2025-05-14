@@ -1,13 +1,19 @@
 package com.example.priceComparator;
 
-import org.springframework.boot.SpringApplication;
+import com.example.priceComparator.model.ProductModel;
+import com.example.priceComparator.util.CsvProductOfferReader;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.List;
 
 @SpringBootApplication
 public class PriceComparatorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PriceComparatorApplication.class, args);
-	}
+		List<ProductModel> offers = CsvProductOfferReader.readAllOffersFromFolder();
 
+		for (ProductModel offer : offers) {
+			System.out.println(offer);
+		}
+	}
 }

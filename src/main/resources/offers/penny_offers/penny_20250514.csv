@@ -1,21 +1,21 @@
-product_id;product_name;product_category;brand;package_quantity;package_unit;price;currency
-P01;Lapte UHT 1.5%;Lactate;Penny;1;L;5.29;RON
-P02;Oua proaspete;Ouă;Penny;10;buc;12.49;RON
-P03;Paine alba;Pâine;Penny;0.5;kg;4.19;RON
-P04;Cascaval Dalia;Brânzeturi;Penny;0.3;kg;13.99;RON
-P05;Pulpe de pui;Carne;Penny;1;kg;19.49;RON
-P06;Banane;Fructe;Penny;1;kg;6.29;RON
-P07;Coca-Cola;Băuturi;Coca-Cola;2;L;9.29;RON
-P08;Apa;Apă;Izvorul Alb;5;L;7.49;RON
-P09;Unt;Lactate;Penny;0.2;kg;9.59;RON
-P10;Branza telemea;Brânzeturi;Penny;0.3;kg;13.49;RON
-P11;Sunca;Mezeluri;Penny;0.5;kg;15.29;RON
-P12;Cartofi;Legume;Penny;2.5;kg;8.79;RON
-P13;Mere Idared;Fructe;Penny;1;kg;5.89;RON
-P14;Iaurt natural 3.5%;Lactate;Penny;0.15;kg;2.39;RON
-P15;Ciocolata;Dulciuri;Penny;0.1;kg;3.89;RON
-P16;Paste penne;Paste;Penny;0.5;kg;5.39;RON
-P17;Ulei floarea soarelui;Ulei;Penny;1;L;9.29;RON
-P18;Zahar alb;Alimente de bază;Penny;1;kg;4.79;RON
-P19;Faina alba;Alimente de bază;Penny;1;kg;4.19;RON
-P20;Detergent Ariel;Detergenți;Ariel;2;kg;33.99;RON
+product_id,product_name,product_category,brand,package_quantity,package_unit,price,currency
+P01,Lapte UHT 1.5%,Lactate,Penny,1,L,5.29,RON
+P02,Oua proaspete,Ouă,Penny,10,buc,12.49,RON
+P03,Paine alba,Pâine,Penny,0.5,kg,4.19,RON
+P04,Cascaval Dalia,Brânzeturi,Penny,0.3,kg,13.99,RON
+P05,Pulpe de pui,Carne,Penny,1,kg,19.49,RON
+P06,Banane,Fructe,Penny,1,kg,6.29,RON
+P07,Coca-Cola,Băuturi,Coca-Cola,2,L,9.29,RON
+P08,Apa,Apă,Izvorul Alb,5,L,7.49,RON
+P09,Unt,Lactate,Penny,0.2,kg,9.59,RON
+P10,Branza telemea,Brânzeturi,Penny,0.3,kg,13.49,RON
+P11,Sunca,Mezeluri,Penny,0.5,kg,15.29,RON
+P12,Cartofi,Legume,Penny,2.5,kg,8.79,RON
+P13,Mere Idared,Fructe,Penny,1,kg,5.89,RON
+P14,Iaurt natural 3.5%,Lactate,Penny,0.15,kg,2.39,RON
+P15,Ciocolata,Dulciuri,Penny,0.1,kg,3.89,RON
+P16,Paste penne,Paste,Penny,0.5,kg,5.39,RON
+P17,Ulei floarea soarelui,Ulei,Penny,1,L,9.29,RON
+P18,Zahar alb,Alimente de bază,Penny,1,kg,4.79,RON
+P19,Faina alba,Alimente de bază,Penny,1,kg,4.19,RON
+P20,Detergent Ariel,Detergenți,Ariel,2,kg,33.99,RON
