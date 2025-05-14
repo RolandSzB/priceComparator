@@ -1,0 +1,21 @@
+product_id;product_name;product_category;brand;package_quantity;package_unit;price;currency
+P01;Lapte UHT 1.5%;Lactate;Kaufland;1;L;5.49;RON
+P02;Oua proaspete;Ouă;Kaufland;10;buc;12.99;RON
+P03;Paine alba;Pâine;Kaufland;0.5;kg;4.29;RON
+P04;Cascaval;Brânzeturi;Dalia;0.3;kg;14.49;RON
+P05;Pulpe de pui;Carne;Kaufland;1;kg;19.99;RON
+P06;Banane;Fructe;Kaufland;1;kg;6.49;RON
+P07;Coca-Cola;Băuturi;Coca-Cola;2;L;9.49;RON
+P08;Apa;Apă;Izvorul Alb;5;L;7.99;RON
+P09;Unt;Lactate;Kaufland;0.2;kg;9.99;RON
+P10;Branza telemea;Brânzeturi;Kaufland;0.3;kg;13.99;RON
+P11;Sunca;Mezeluri;Kaufland;0.5;kg;15.49;RON
+P12;Cartofi;Legume;Kaufland;2.5;kg;8.99;RON
+P13;Mere Idared;Fructe;Kaufland;1;kg;5.99;RON
+P14;Iaurt natural;Lactate;Kaufland;0.15;kg;2.49;RON
+P15;Ciocolata;Dulciuri;Kaufland;0.1;kg;3.99;RON
+P16;Paste penne;Paste;Kaufland;0.5;kg;5.49;RON
+P17;Ulei floarea soarelui;Ulei;Kaufland;1;L;9.49;RON
+P18;Zahar alb;Alimente de bază;Kaufland;1;kg;4.99;RON
+P19;Faina alba;Alimente de bază;Kaufland;1;kg;4.29;RON
+P20;Detergent Ariel;Detergenți;Ariel;2;kg;34.99;RON

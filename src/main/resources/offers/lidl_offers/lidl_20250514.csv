@@ -1,0 +1,21 @@
+product_id;product_name;product_category;brand;package_quantity;package_unit;price;currency
+P01;Lapte UHT 1.5%;Lactate;Pilos;1;L;5.19;RON
+P02;Oua proaspete;Ouă;Lidl;10;buc;12.29;RON
+P03;Paine alba;Pâine;Lidl;0.5;kg;4.09;RON
+P04;Cascaval Dalia;Brânzeturi;Lidl;0.3;kg;13.79;RON
+P05;Pulpe de pui;Carne;Lidl;1;kg;19.29;RON
+P06;Banane;Fructe;Lidl;1;kg;6.19;RON
+P07;Coca-Cola;Băuturi;Coca-Cola;2;L;9.19;RON
+P08;Apa;Apă;Saguaro;5;L;7.39;RON
+P09;Unt;Lactate;Pilos;0.2;kg;9.39;RON
+P10;Branza telemea;Brânzeturi;Pilos;0.3;kg;13.29;RON
+P11;Sunca;Mezeluri;Lidl;0.5;kg;15.19;RON
+P12;Cartofi;Legume;Lidl;2.5;kg;8.69;RON
+P13;Mere Idared;Fructe;Lidl;1;kg;5.79;RON
+P14;Iaurt natural 3.5%;Lactate;Pilos;0.15;kg;2.29;RON
+P15;Ciocolata;Dulciuri;FinCarre;0.1;kg;3.79;RON
+P16;Paste penne;Paste;Combino;0.5;kg;5.29;RON
+P17;Ulei floarea soarelui;Ulei;Vita D'or;1;L;9.19;RON
+P18;Zahar alb;Alimente de bază;Lidl;1;kg;4.69;RON
+P19;Faina alba;Alimente de bază;Lidl;1;kg;4.09;RON
+P20;Detergent Ariel;Detergenți;Ariel;2;kg;33.49;RON
