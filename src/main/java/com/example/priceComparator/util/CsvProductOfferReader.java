@@ -56,6 +56,7 @@ public class CsvProductOfferReader {
                 offer.setPackageUnit(line[5]);
                 offer.setPrice(Double.parseDouble(line[6]));
                 offer.setCurrency(line[7]);
+                offer.setStoreName(storeName);
                 offers.add(offer);
             }
         } catch (IOException | CsvValidationException e) {

@@ -16,4 +16,5 @@ public class ProductModel {
     private String packageUnit;
     private Number price;
     private String currency;
+    private String storeName;
 }
