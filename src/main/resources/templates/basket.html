@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket Optimizer</title>
+    <style>
+        .original-price {
+            color: red;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .discount-price {
+            font-weight: bold;
+            color: black;
+        }
+
+        .store-name {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Smart Shopping Basket Optimizer</h1>
+
+<div>
+    <label>Enter your products (comma separated):</label><br>
+    <input type="text" id="basketInput" placeholder="lapte, oua, paine alba" style="width: 400px; padding: 8px;">
+    <button onclick="optimizeBasket()">Optimize Basket</button>
+</div>
+
+<div id="optimizedResults" style="margin-top: 20px;"></div>
+
+<script  src="/js/basketLogic.js">
+
+</script>
+</body>
+</html>
