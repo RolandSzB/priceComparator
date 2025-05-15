@@ -1,6 +1,7 @@
 package com.example.priceComparator.controller;
 
 import com.example.priceComparator.model.ProductModel;
+import com.example.priceComparator.service.ProductService;
 import com.example.priceComparator.util.CsvProductOfferReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +10,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api")
 public class ProductSearchRestController {
 
-    @GetMapping("/api/search")
+    private final ProductService productService;
+
+    public ProductSearchRestController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping("/search")
     public List<ProductModel> searchProducts(@RequestParam("query") String query) {
         List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder();
         return allOffers.stream()
