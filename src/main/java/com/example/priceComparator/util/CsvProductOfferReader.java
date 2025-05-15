@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CsvProductOfferReader {
 
-    public static List<ProductModel> readAllOffersFromFolder(String s) {
+    public static List<ProductModel> readAllOffersFromFolder() {
         List<ProductModel> offers = new ArrayList<>();
 
         String[] stores = {"kaufland", "lidl", "penny"};
