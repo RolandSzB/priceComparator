@@ -12,9 +12,10 @@ public class ProductModel {
     private String productName;
     private String productCategory;
     private String brand;
-    private Number packageQuantity;
+    private Double packageQuantity;
     private String packageUnit;
-    private Number price;
+    private Double price;
     private String currency;
     private String storeName;
+    private Double discountedPrice;
 }
