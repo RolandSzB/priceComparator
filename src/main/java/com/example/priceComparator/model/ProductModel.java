@@ -17,5 +17,8 @@ public class ProductModel {
     private Double price;
     private String currency;
     private String storeName;
+
     private Double discountedPrice;
+    private double discountPercentage = 0;
+
 }

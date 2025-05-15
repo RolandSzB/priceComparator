@@ -35,13 +35,11 @@
   </style>
 </head>
 <body>
-<h1>Search for product</h1>
-
+<h1>Search for a product</h1>
 
 <div class="search-container">
-  <input type="text" id="searchQuery" placeholder="Search something" oninput="searchProducts()">
+  <input type="text" id="searchQuery" placeholder="Type at least 3 characters" oninput="searchProducts()">
 </div>
-
 
 <div class="search-results">
   <table id="resultsTable">
@@ -55,6 +53,7 @@
       <th>Quantity</th>
       <th>Unit</th>
       <th>Price</th>
+      <th>Discount</th>
       <th>Currency</th>
     </tr>
     </thead>
@@ -62,7 +61,6 @@
     </tbody>
   </table>
 </div>
-
 <script src="/js/searchAjaxLogic.js"></script>
 
 </body>

@@ -4,64 +4,104 @@ import com.example.priceComparator.model.DiscountModel;
 import com.example.priceComparator.model.ProductModel;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CsvProductOfferReader {
 
-    public static List<ProductModel> readAllOffersFromFolder() {
+    public static List<ProductModel> readAllOffersFromFolder(String s) {
         List<ProductModel> offers = new ArrayList<>();
-        File folder = new File(folderPath);
 
-        for (File file : folder.listFiles()) {
-            if (file.getName().endsWith("_offers.csv")) {
-                String storeName = file.getName().split("_")[0]; // kaufland, lidl, penny
-                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-                    String line = br.readLine(); // skip header
-                    while ((line = br.readLine()) != null) {
-                        String[] parts = line.split(",");
-                        if (parts.length >= 8) {
-                            ProductModel offer = new ProductModel();
-                            offer.setProductId(parts[0]);
-                            offer.setProductName(parts[1]);
-                            offer.setProductCategory(parts[2]);
-                            offer.setBrand(parts[3]);
-                            offer.setPackageQuantity(Double.valueOf(parts[4]));
-                            offer.setPackageUnit(parts[5]);
-                            offer.setPrice(Double.parseDouble(parts[6]));
-                            offer.setCurrency(parts[7]);
-                            offer.setStoreName(storeName);
-                            offers.add(offer);
+        String[] stores = {"kaufland", "lidl", "penny"};
+        String todayDate = LocalDate.now().toString().replace("-", "");
+
+        for (String store : stores) {
+            String offersPath = String.format("/offers/%s_offers/%s_%s.csv", store, store, LocalDate.now().toString().replace("-", ""));
+            String discountsPath = String.format("/offers/%s_offers/%s_discount_%s.csv", store, store, todayDate);
+
+            List<DiscountModel> discounts = readDiscountsFromCsv(discountsPath);
+
+            try (InputStream is = CsvProductOfferReader.class.getResourceAsStream(offersPath);
+                 BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+
+                String line;
+                br.readLine();
+
+                while ((line = br.readLine()) != null) {
+                    String[] parts = line.split(",");
+
+                    ProductModel product = new ProductModel();
+                    product.setProductId(parts[0]);
+                    product.setProductName(parts[1]);
+                    product.setProductCategory(parts[2]);
+                    product.setBrand(parts[3]);
+                    product.setPackageQuantity(Double.parseDouble(parts[4]));
+                    product.setPackageUnit(parts[5]);
+                    product.setPrice(Double.parseDouble(parts[6]));
+                    product.setCurrency(parts[7]);
+                    product.setStoreName(store);
+
+
+                    for (DiscountModel discount : discounts) {
+                        if (discount.getProductId().equals(product.getProductId()) &&
+                                isTodayBetween(discount.getFromDate(), discount.getToDate())) {
+                            product.setDiscountPercentage(discount.getPercentageOfDiscount());
+                            double discountedPrice = product.getPrice() * (1 - discount.getPercentageOfDiscount() / 100);
+                            product.setDiscountedPrice(Math.round(discountedPrice * 100.0) / 100.0);
+                            break;
                         }
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
+
+                    offers.add(product);
                 }
+
+            } catch (Exception e) {
+                System.err.println("Could not read file: " + offersPath + " - " + e.getMessage());
             }
         }
-
-
-        List<DiscountModel> discounts = CsvDiscountReader.readDiscountsFromFolder(folderPath);
-        applyDiscounts(offers, discounts);
 
         return offers;
     }
 
-    private static void applyDiscounts(List<ProductModel> offers, List<DiscountModel> discounts) {
-        LocalDate today = LocalDate.now();
+    public static List<DiscountModel> readDiscountsFromCsv(String resourcePath) {
+        List<DiscountModel> discounts = new ArrayList<>();
 
-        for (ProductModel offer : offers) {
-            discounts.stream()
-                    .filter(d -> d.getProductId().equals(offer.getProductId()))
-                    .filter(d -> !today.isBefore(d.getFromDate()) && !today.isAfter(d.getToDate()))
-                    .findFirst()
-                    .ifPresent(d -> {
-                        double discountAmount = offer.getPrice() * d.getPercentageOfDiscount() / 100;
-                        offer.setDiscountedPrice(offer.getPrice() - discountAmount);
-                    });
+        try (InputStream is = CsvProductOfferReader.class.getResourceAsStream(resourcePath);
+             BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+
+            String line;
+            br.readLine();
+
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+
+                DiscountModel discount = new DiscountModel();
+                discount.setProductId(parts[0]);
+                discount.setProductName(parts[1]);
+                discount.setBrand(parts[2]);
+                discount.setPackageQuantity(Double.parseDouble(parts[3]));
+                discount.setPackageUnit(parts[4]);
+                discount.setProductCategory(parts[5]);
+                discount.setFromDate(LocalDate.parse(parts[6]));
+                discount.setToDate(LocalDate.parse(parts[7]));
+                discount.setPercentageOfDiscount(Double.parseDouble(parts[8]));
+
+                discounts.add(discount);
+            }
+
+        } catch (IOException | NullPointerException e) {
+            System.err.println("Could not read discount file: " + resourcePath + " - " + e.getMessage());
         }
+
+        return discounts;
+    }
+
+    private static boolean isTodayBetween(LocalDate from, LocalDate to) {
+        LocalDate today = LocalDate.now();
+        return (today.isEqual(from) || today.isAfter(from)) && (today.isEqual(to) || today.isBefore(to));
     }
 }
