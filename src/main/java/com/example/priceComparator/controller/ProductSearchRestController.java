@@ -38,4 +38,9 @@ public class ProductSearchRestController {
         return productService.getTopDiscountedOffers(10);
     }
 
+    @GetMapping("/latest-discounts")
+    public List<ProductModel> getLatestDiscounts() {
+        return CsvProductOfferReader.getLatestDiscountOffers();
+    }
+
 }
