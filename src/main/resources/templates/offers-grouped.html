@@ -46,6 +46,21 @@
     </table>
 </div>
 
+<h2>Latest Discounts</h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Store</th>
+            <th>Product</th>
+            <th>Discount (%)</th>
+        </tr>
+        </thead>
+        <tbody id="latestDiscountsBody">
+        </tbody>
+    </table>
+</div>
+
 <div th:each="entry : ${groupedOffers}">
     <h2 th:text="${entry.key}">Store Name</h2>
     <table>
