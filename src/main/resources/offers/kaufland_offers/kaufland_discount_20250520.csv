@@ -1,6 +1,6 @@
 product_id,product_name,brand,package_quantity,package_unit,product_category,from_date,to_date,percentage_of_discount
-P01,Lapte UHT 1.5%,Kaufland,1,L,Lactate,2025-05-01,2025-05-23,10
+P01,Lapte UHT 1.5%,Kaufland,1,L,Lactate,2025-05-19,2025-05-23,10
 P02,Oua proaspete,Kaufland,10,buc,Ouă,2025-05-01,2025-05-07,15
-P03,Paine alba,Kaufland,0.5,kg,Pâine,2025-05-01,2025-05-22,5
+P03,Paine alba,Kaufland,0.5,kg,Pâine,2025-05-20,2025-05-22,5
 P05,Pulpe de pui,Kaufland,1,kg,Carne,2025-05-01,2025-05-07,12
 P06,Banane,Kaufland,1,kg,Fructe,2025-05-01,2025-05-07,8
