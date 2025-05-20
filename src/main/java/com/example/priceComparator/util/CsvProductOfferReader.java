@@ -104,4 +104,42 @@ public class CsvProductOfferReader {
         LocalDate today = LocalDate.now();
         return (today.isEqual(from) || today.isAfter(from)) && (today.isEqual(to) || today.isBefore(to));
     }
+
+    public static List<ProductModel> getLatestDiscountOffers() {
+        List<ProductModel> latestDiscounts = new ArrayList<>();
+
+        String[] stores = {"kaufland", "lidl", "penny"};
+        LocalDate today = LocalDate.now();
+        LocalDate yesterday = today.minusDays(1);
+        String todayStr = today.toString().replace("-", "");
+
+        for (String store : stores) {
+            String offersPath = String.format("/offers/%s_offers/%s_%s.csv", store, store, todayStr);
+            String discountsPath = String.format("/offers/%s_offers/%s_discount_%s.csv", store, store, todayStr);
+
+            List<DiscountModel> discounts = readDiscountsFromCsv(discountsPath);
+
+            for (DiscountModel discount : discounts) {
+                if (discount.getFromDate().isEqual(today) || discount.getFromDate().isEqual(yesterday)) {
+                    ProductModel product = new ProductModel();
+                    product.setProductId(discount.getProductId());
+                    product.setProductName(discount.getProductName());
+                    product.setBrand(discount.getBrand());
+                    product.setProductCategory(discount.getProductCategory());
+                    product.setPackageQuantity(discount.getPackageQuantity());
+                    product.setPackageUnit(discount.getPackageUnit());
+                    product.setDiscountPercentage(discount.getPercentageOfDiscount());
+                    product.setDiscountFromDate(discount.getFromDate());
+                    product.setDiscountToDate(discount.getToDate());
+                    product.setStoreName(store);
+
+                    latestDiscounts.add(product);
+                }
+            }
+        }
+
+        return latestDiscounts;
+    }
+
+
 }

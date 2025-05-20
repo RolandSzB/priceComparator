@@ -1,7 +1,10 @@
 package com.example.priceComparator.model;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,5 +23,7 @@ public class ProductModel {
 
     private Double discountedPrice;
     private double discountPercentage = 0;
+    private LocalDate DiscountFromDate;
+    private LocalDate DiscountToDate;
 
 }
