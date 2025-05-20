@@ -1,6 +1,6 @@
 product_id,product_name,brand,package_quantity,package_unit,product_category,from_date,to_date,percentage_of_discount
 P09,Unt,Penny,0.2,kg,Lactate,2025-05-01,2025-05-07,10
-P12,Cartofi,Penny,2.5,kg,Legume,2025-05-01,2025-05-07,6
+P12,Cartofi,Penny,2.5,kg,Legume,2025-05-01,2025-05-22,6
 P13,Mere Idared,Penny,1,kg,Fructe,2025-05-01,2025-05-07,7
 P17,Ulei floarea soarelui,Penny,1,L,Ulei,2025-05-01,2025-05-07,9
 P20,Detergent Ariel,Ariel,2,kg,Detergenți,2025-05-01,2025-05-07,18

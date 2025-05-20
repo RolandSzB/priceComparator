@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     public List<ProductModel> searchProducts(String query) {
-        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder();
+        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder("/offers");
         return allOffers.stream()
                 .filter(p -> p.getProductName().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public List<ProductModel> optimizeBasket(List<String> productQueries) {
-        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder();
+        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder("/offers");
         List<ProductModel> optimizedBasket = new ArrayList<>();
 
         for (String query : productQueries) {
@@ -43,4 +43,14 @@ public class ProductService {
 
         return optimizedBasket;
     }
+
+    public List<ProductModel> getTopDiscountedOffers(int limit) {
+        return CsvProductOfferReader.readAllOffersFromFolder("/offers").stream()
+                .filter(p -> p.getDiscountPercentage() > 0)
+                .sorted(Comparator.comparingDouble(ProductModel::getDiscountPercentage).reversed())
+                .limit(limit)
+                .collect(Collectors.toList());
+    }
+
+
 }

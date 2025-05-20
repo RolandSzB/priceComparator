@@ -15,13 +15,13 @@ public class ProductController {
 
     @GetMapping("/offers")
     public String getAllOffers(Model model) {
-        List<ProductModel> offers = CsvProductOfferReader.readAllOffersFromFolder();
+        List<ProductModel> offers = CsvProductOfferReader.readAllOffersFromFolder("/offers");
         model.addAttribute("offers", offers);
         return "offers";
     }
     @GetMapping("/offers/grouped")
     public String getGroupedOffers(Model model) {
-        List<ProductModel> offers = CsvProductOfferReader.readAllOffersFromFolder();
+        List<ProductModel> offers = CsvProductOfferReader.readAllOffersFromFolder("/offers");
         Map<String, List<ProductModel>> groupedOffers = offers.stream()
                 .collect(Collectors.groupingBy(ProductModel::getStoreName));
 

@@ -21,7 +21,7 @@ public class ProductSearchRestController {
 
     @GetMapping("/search")
     public List<ProductModel> searchProducts(@RequestParam("query") String query) {
-        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder();
+        List<ProductModel> allOffers = CsvProductOfferReader.readAllOffersFromFolder("/offers");
         return allOffers.stream()
                 .filter(offer -> offer.getProductName().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
