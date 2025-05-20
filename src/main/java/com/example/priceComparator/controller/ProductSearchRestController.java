@@ -32,4 +32,10 @@ public class ProductSearchRestController {
         List<ProductModel> optimized = productService.optimizeBasket(productQueries);
         return ResponseEntity.ok(optimized);
     }
+
+    @GetMapping("/top-discounts")
+    public List<ProductModel> getTopDiscounts() {
+        return productService.getTopDiscountedOffers(10);
+    }
+
 }
