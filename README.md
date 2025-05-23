@@ -13,7 +13,7 @@ The project reads data from CSV files and offers a web interface to:
   - All Products and Offers by Store
 
 ### Project Structure
-src
+<pre>``` src
 ├── main
 │ ├── java
 │ │ └── com.example.priceComparator
@@ -25,7 +25,7 @@ src
 │ │ ├── templates Thymeleaf HTML templates 
 │ │ ├── static JS resources
 │ │ └── offers CSV files: prices and discounts by store
-└── test 
+└── test ``` </pre>
 
 
 ### How to Build and Run
