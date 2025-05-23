@@ -1,6 +1,6 @@
 product_id,product_name,brand,package_quantity,package_unit,product_category,from_date,to_date,percentage_of_discount
 P01,Lapte UHT 1.5%,Pilos,1,L,Lactate,2025-05-01,2025-05-07,15
-P07,Coca-Cola,Coca-Cola,2,L,Băuturi,2025-05-01,2025-05-22,12
+P07,Coca-Cola,Coca-Cola,2,L,Băuturi,2025-05-01,2025-05-24,12
 P10,Branza telemea,Pilos,0.3,kg,Brânzeturi,2025-05-01,2025-05-07,15
-P15,Ciocolata,FinCarre,0.1,kg,Dulciuri,2025-05-01,2025-05-22,20
+P15,Ciocolata,FinCarre,0.1,kg,Dulciuri,2025-05-22,2025-05-28,20
 P16,Paste Penne,Combino,0.5,kg,Paste,2025-05-01,2025-05-07,10
